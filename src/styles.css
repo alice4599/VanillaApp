@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 18px;
+    gap: 70px;
+    order: 5;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.icon {
+    position: relative;
+    top: -20px;
+    left: -5px;
+
+}
+
+.weatherInfo {
+    margin: 0px 0px 20px;
+}
+
+.infoHumidity {
+    display: inline;
+}
+
+.infoSpeed {
+    display: inline;
+}
+
+.card {
+    background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/583/original/background.jpg?1681743283");
+    border-radius: 40px;
+}
+
+.enter-city {
+    height: 45px;
+}
+
+h1 {
+    columns: #000000;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+.cold {
+    width: 60px;
+}
+
+.weatherDescription {
+    text-align: center;
+    margin: 0;
+}
+
+.weather {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.tempUnit {
+    text-align: center;
+}
+
+.temperature {
+    font-size: 70px;
+}
+
+.celsiusFahrenheit {
+    font-size: 18px;
+}
+
+.unit {
+    color: #000000;
+}

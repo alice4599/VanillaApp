@@ -1,8 +1,17 @@
 function displayInfo(response) {
+  console.log(response);
   let mainTemp = Math.round(response.data.temperature.current);
   let humidity = Math.round(response.data.temperature.humidity);
   let speed = Math.round(response.data.wind.speed);
+  let icon = document.querySelector("#weatherIcon");
+  icon.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
+
   document.querySelector("#city").innerHTML = response.data.city;
+  document.querySelector("#weatherIcon").innerHTML =
+    response.data.condition.icon;
   document.querySelector("#temperature").innerHTML = mainTemp;
   document.querySelector("#humidity").innerHTML = humidity;
   document.querySelector("#speed").innerHTML = speed;

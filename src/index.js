@@ -7,6 +7,7 @@ function displayInfo(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+  celsiusTemperature = mainTemp;
 
   document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#weatherIcon").innerHTML =
@@ -72,7 +73,7 @@ p.innerHTML = currentDate(now);
 function celsiusToFahrenheit(event) {
   event.preventDefault();
   let tempFahrenheit = document.querySelector("#temperature");
-  tempFahrenheit.innerHTML = 8;
+  tempFahrenheit.innerHTML = celsiusTemperature;
 }
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", celsiusToFahrenheit);
@@ -81,7 +82,9 @@ function fahrenheitToCelsius(event) {
   event.preventDefault();
   let tempCelsius = document.querySelector("#temperature");
   let fahrenheitUnit = tempCelsius.innerHTML;
-  tempCelsius.innerHTML = Math.round((fahrenheitUnit * 9) / 5 + 32);
+  tempCelsius.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
 }
 let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", fahrenheitToCelsius);
+
+let celsiusTemperature = null;

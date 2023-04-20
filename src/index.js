@@ -1,3 +1,10 @@
+function cityForecast(coordinates) {
+  let key = "4dad04c3ca4f2774bb04900t8b93bo1f";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${key}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayInfo(response) {
   let mainTemp = Math.round(response.data.temperature.current);
   let humidity = Math.round(response.data.temperature.humidity);
@@ -17,6 +24,8 @@ function displayInfo(response) {
   document.querySelector("#speed").innerHTML = speed;
   document.querySelector("#description").innerHTML =
     response.data.condition.description;
+
+  cityForecast(response.data.coordinates);
 }
 
 function inputInfo(city) {
@@ -42,7 +51,6 @@ function displayPosition(event) {
 }
 let current = document.querySelector("#currentLocation");
 current.addEventListener("click", displayPosition);
-inputInfo("Hanau");
 
 function currentDate(date) {
   let hours = date.getHours();
@@ -70,6 +78,34 @@ let p = document.querySelector("p#date");
 let now = new Date();
 p.innerHTML = currentDate(now);
 
+function displayForecast(response) {
+  let forecastMon = document.querySelector("#forecastRow");
+  console.log(response.data.daily);
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col">
+        <div class="forecastDay">${day}</div>
+           <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+              class="forecastIcon"
+              id="iconMon"
+              alt=""
+              width="36"
+            />
+            <div class="forecastTemp">
+              <span class="forecastMondayMax">9°</span>
+              <span class="forecastMondayMin">10°</span>          
+        </div>
+      </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastMon.innerHTML = forecastHTML;
+}
+
 function celsiusToFahrenheit(event) {
   event.preventDefault();
   let tempFahrenheit = document.querySelector("#temperature");
@@ -88,3 +124,5 @@ let fahrenheit = document.querySelector("#fahrenheit");
 fahrenheit.addEventListener("click", fahrenheitToCelsius);
 
 let celsiusTemperature = null;
+
+inputInfo("Hanau");

@@ -10,12 +10,9 @@
     align-items: center;
 }
 
-.forecastDay {
-    color: white;
-    text-shadow: 1px 1px 2px black;
-}
-
-.forecastTemp {
+.forecast-row {
+    text-align: center;
+    margin-bottom: 18px;
     color: white;
     text-shadow: 1px 1px 2px black;
 }

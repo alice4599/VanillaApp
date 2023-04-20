@@ -80,9 +80,8 @@ p.innerHTML = currentDate(now);
 
 function displayForecast(response) {
   let forecastMon = document.querySelector("#forecastRow");
-  console.log(response.data.daily);
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +

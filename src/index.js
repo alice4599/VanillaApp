@@ -122,23 +122,4 @@ function displayForecast(response) {
   forecastMon.innerHTML = forecastHTML;
 }
 
-function celsiusToFahrenheit(event) {
-  event.preventDefault();
-  let tempFahrenheit = document.querySelector("#temperature");
-  tempFahrenheit.innerHTML = celsiusTemperature;
-}
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", celsiusToFahrenheit);
-
-function fahrenheitToCelsius(event) {
-  event.preventDefault();
-  let tempCelsius = document.querySelector("#temperature");
-  let fahrenheitUnit = tempCelsius.innerHTML;
-  tempCelsius.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
-}
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", fahrenheitToCelsius);
-
-let celsiusTemperature = null;
-
 inputInfo("Hanau");

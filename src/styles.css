@@ -1,3 +1,20 @@
+.card {
+    background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/583/original/background.jpg?1681743283");
+    background-size: cover;
+    border-radius: 40px;
+}
+
+.cityUnit {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.cold {
+    width: 60px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -8,6 +25,10 @@
     order: 5;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.enter-city {
+    height: 45px;
 }
 
 .forecast-row {
@@ -25,17 +46,20 @@
     font-size: 15px;
 }
 
+h1 {
+
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
 .icon {
     position: relative;
     top: -20px;
     left: -5px;
 
-}
-
-.weatherInfo {
-    margin: 0px 0px 20px;
-    color: white;
-    text-shadow: 1px 1px 2px black;
 }
 
 .infoHumidity {
@@ -46,28 +70,31 @@
     display: inline;
 }
 
-.card {
-    background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/077/583/original/background.jpg?1681743283");
-    border-radius: 40px;
+.source {
+    color: white;
+    text-shadow: 1px 1px 2px black;
 }
 
-.enter-city {
-    height: 45px;
-}
-
-h1 {
-
-    font-weight: bold;
+.tempUnit {
     text-align: center;
-    margin: 0;
+}
+
+.temperature {
+    font-size: 70px;
     color: white;
     text-shadow: 1px 1px 2px black;
 }
 
-.cold {
-    width: 60px;
+.unit {
     color: white;
     text-shadow: 1px 1px 2px black;
+    cursor: default;
+    text-decoration: none;
+
+}
+
+.unit:hover {
+    text-decoration: none;
 }
 
 .weatherDescription {
@@ -87,40 +114,8 @@ h1 {
 
 }
 
-.tempUnit {
-    text-align: center;
-}
-
-.cityUnit {
-    color: white;
-    text-shadow: 1px 1px 2px black;
-}
-
-.temperature {
-    font-size: 70px;
-    color: white;
-    text-shadow: 1px 1px 2px black;
-}
-
-.celsiusFahrenheit {
-    font-size: 18px;
-    color: white;
-    text-shadow: 1px 1px 2px black;
-}
-
-.unit {
-    color: white;
-    text-shadow: 1px 1px 2px black;
-    cursor: default;
-    text-decoration: none;
-
-}
-
-.unit:hover {
-    text-decoration: none;
-}
-
-.source {
+.weatherInfo {
+    margin: 0px 0px 20px;
     color: white;
     text-shadow: 1px 1px 2px black;
 }
